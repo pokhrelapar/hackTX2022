@@ -11,7 +11,7 @@ let pconf = document.querySelector('.box-result p')
             new ProgressBar.Circle('#progress', {
             color: 'blue',
             strokeWidth: 10,
-            duration: 2000, // milliseconds
+            duration: 2000,
             easing: 'easeInOut'
         });
 
@@ -23,10 +23,8 @@ let pconf = document.querySelector('.box-result p')
             return data;
         }
 
-         // here the data will be return.
         
 
-        // Initialize/Load model
         async function initialize() {
             let status = document.querySelector('.init_status')
             status.innerHTML = 'Loading Model .... <span class="fa fa-spinner fa-spin"></span>'
@@ -35,7 +33,6 @@ let pconf = document.querySelector('.box-result p')
         }
 
         async function predict() {
-            // Function for invoking prediction
             let img = document.getElementById('image')
             let offset = tf.scalar(255)
             let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().expandDims();
@@ -47,20 +44,13 @@ let pconf = document.querySelector('.box-result p')
                     predicted_class = tf.argMax(prediction)
                     
                     class_idx = Array.from(predicted_class.dataSync())[0]
-                    // document.querySelector('.pred_class').innerHTML = data[class_idx]
                     document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}% <br> Confidence`
                     console.log(data)
                     console.log(data[class_idx])// send this to user
                     console.log(prediction)
-                    // your code here:
-
-                    //
 
                     progressBar.animate(prediction[class_idx]-0.005); // percent
-
                     pconf.style.display = 'block'
-
-                    // confidence.innerHTML = Math.round(prediction[class_idx]*100)
                     confidence.innerHTML = data[class_idx]
   
                 }
