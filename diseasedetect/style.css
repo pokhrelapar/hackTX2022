@@ -164,24 +164,11 @@ display: block;
     margin: 10px 0px;
 
 }
-/* 
-@media (max-width: 768px){
-    .box{
-        width: 100%;
-    }
-} */
 
 .tutorial{
     text-align: center;
     color: #222222;
 }
-
-/* path {
-    stroke: blue;
-    stroke-width: 10;
-    fill-opacity: 0.2;
-} */
-
 
 .mybox{
     top: 3vh;
