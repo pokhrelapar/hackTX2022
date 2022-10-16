@@ -30,6 +30,12 @@ hr{
     /* margin: 10px 0px; */
 }
 
+.logo {
+    top: 5vh;
+    left: 5vw;
+    position: absolute;
+}
+
 .upload-file{
     border:2px dashed black;
     color:#9b9b9b;
@@ -175,3 +181,12 @@ display: block;
     stroke-width: 10;
     fill-opacity: 0.2;
 } */
+
+
+.mybox{
+    top: 3vh;
+    left:3vw;
+    height: 3vh;
+    width: 3vw;
+    position: inherit;
+}
