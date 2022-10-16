@@ -47,17 +47,21 @@ let pconf = document.querySelector('.box-result p')
                     predicted_class = tf.argMax(prediction)
                     
                     class_idx = Array.from(predicted_class.dataSync())[0]
-                    document.querySelector('.pred_class').innerHTML = data[class_idx]
-                    document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}%`
+                    // document.querySelector('.pred_class').innerHTML = data[class_idx]
+                    document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}% <br> Confidence`
                     console.log(data)
-                    console.log(data[class_idx])
+                    console.log(data[class_idx])// send this to user
                     console.log(prediction)
+                    // your code here:
+
+                    //
 
                     progressBar.animate(prediction[class_idx]-0.005); // percent
 
                     pconf.style.display = 'block'
 
-                    confidence.innerHTML = Math.round(prediction[class_idx]*100)
+                    // confidence.innerHTML = Math.round(prediction[class_idx]*100)
+                    confidence.innerHTML = data[class_idx]
   
                 }
             );
